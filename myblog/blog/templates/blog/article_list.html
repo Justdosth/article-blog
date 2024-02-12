@@ -1,0 +1,21 @@
+<!-- blog/templates/blog/article_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article List</title>
+</head>
+<body>
+    <h1>Article List</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <strong>Title:</strong> {{ article.title }}<br>
+                <strong>Content:</strong> {{ article.content }}<br>
+                <strong>Topic:</strong> {{ article.topic }}<br>
+                <a href="{% url 'get_comment_list' %}?article_id={{ article.id }}">View Comments</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

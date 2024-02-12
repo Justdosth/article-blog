@@ -1,0 +1,12 @@
+<!-- blog/templates/blog/comment_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ comment.text }}</title>
+</head>
+<body>
+    <h1>{{ comment.text }}</h1>
+    <a href="{% url 'get_comment_list' %}">Back to Comment List</a>
+</body>
+</html>

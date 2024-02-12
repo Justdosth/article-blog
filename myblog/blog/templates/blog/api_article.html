@@ -1,0 +1,14 @@
+<!-- blog/templates/blog/api_articles.html -->
+{% load rest_framework %}
+{% autoescape off %}
+[
+    {% for article in articles %}
+        {
+            "id": {{ article.id }},
+            "title": "{{ article.title|safe }}",
+            "content": "{{ article.content|safe }}",
+            "topic": "{{ article.topic|safe }}"
+        }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+]
+{% endautoescape %}

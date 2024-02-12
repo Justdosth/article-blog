@@ -1,0 +1,17 @@
+<!-- blog/templates/blog/comment_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments for Article</title>
+</head>
+<body>
+    <h1>Comments for Article</h1>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.text }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'get_article_details' article.id %}">Back to Article Details</a>
+</body>
+</html>

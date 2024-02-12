@@ -1,0 +1,18 @@
+<!-- blog/templates/blog/article_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <p><strong>Topic:</strong> {{ article.topic }}</p>
+    <a href="{% url 'get_comment_list' %}?article_id={{ article.id }}">View Comments</a>
+    {% for comment in article.comments %}
+        <p>{{ comment.text }}</p>
+    {% endfor %}
+    <a href="{% url 'get_article_list' %}">Back to Article List</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- blog/templates/blog/article_topic_filter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Articles - {{ topic }}</title>
+</head>
+<body>
+    <h1>Filtered Articles - {{ topic }}</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{% url 'get_article_details' article.id %}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'get_article_list' %}">Back to Article List</a>
+</body>
+</html>
